@@ -2,7 +2,7 @@
   "name": "google-apps",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "scripts": {
     "build": "scripty",
     "build:gmail": "scripty",

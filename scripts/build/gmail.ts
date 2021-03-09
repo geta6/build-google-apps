@@ -31,7 +31,7 @@ import nativefier from 'nativefier';
         ignoreCertificate: false,
         ignoreGpuBlacklist: false,
         enableEs3Apis: false,
-        internalUrls: '(?!)',
+        internalUrls: 'accounts\\.google\\.com',
         blockExternalUrls: false,
         inject: [injectPath],
         titleBarStyle: 'hiddenInset',
