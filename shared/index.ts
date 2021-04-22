@@ -1,0 +1,21 @@
+export const args = {
+  overwrite: true,
+  asar: true,
+  counter: true,
+  bounce: true,
+  width: 930,
+  height: 450,
+  showMenuBar: false,
+  fastQuit: true,
+  ignoreCertificate: false,
+  ignoreGpuBlacklist: false,
+  enableEs3Apis: false,
+  internalUrls: 'accounts\\.google\\.com.*',
+  blockExternalUrls: false,
+  titleBarStyle: 'hiddenInset',
+  darwinDarkModeSupport: true,
+  browserwindowOptions: {
+    fullscreenable: true,
+    simpleFullscreen: false,
+  },
+};

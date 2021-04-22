@@ -4,6 +4,7 @@ import os from 'os';
 import { promises as fs } from 'fs';
 import path from 'path';
 import nativefier from 'nativefier';
+import { args } from '../../shared';
 
 (async () => {
   const injectPath = path.join(await fs.mkdtemp(path.join(os.tmpdir(), 'build-google-apps')), 'inject.css');
@@ -16,26 +17,12 @@ import nativefier from 'nativefier';
   await new Promise((resolve, reject) => {
     nativefier(
       {
+        ...args,
         name: 'Google Gmail',
         targetUrl: 'https://mail.google.com',
         out: path.join(__dirname, '..', '..', 'dist'),
-        overwrite: true,
-        asar: true,
         icon: path.join(__dirname, '..', '..', 'icons', 'google-gmail.icns'),
-        counter: true,
-        bounce: true,
-        width: 930,
-        height: 450,
-        showMenuBar: false,
-        fastQuit: true,
-        ignoreCertificate: false,
-        ignoreGpuBlacklist: false,
-        enableEs3Apis: false,
-        internalUrls: 'accounts\\.google\\.com',
-        blockExternalUrls: false,
         inject: [injectPath],
-        titleBarStyle: 'hiddenInset',
-        darwinDarkModeSupport: true,
       },
       (e, v) => (e ? reject(e) : resolve(v)),
     );
